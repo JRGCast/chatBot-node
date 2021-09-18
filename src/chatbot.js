@@ -8,10 +8,8 @@ wppconnect.create({
     .then((client) =>
     
         client.onMessage((message) => {
-        
-            console.log('Mensagem digitada pelo usuário: ' + message.body);
-            
-            client.sendText(message.from, 'PING! Mande um PONG para mim:')
+            console.log(JSON.parse(JSON.stringify(message)));            
+            client.sendText(message.from, `Olá, como vai ${message.sender.formattedName}. Sua mensagem é ${message.body}`)
                 .then((result) => {
                     console.log('Pong retornado: ', result); 
                 })
