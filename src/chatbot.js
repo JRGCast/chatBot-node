@@ -6,17 +6,17 @@ wppconnect.create({
     puppeteerOptions: { args: ['--no-sandbox'] }
 })
     .then((client) =>
-    
+
         client.onMessage((message) => {
-            console.log(JSON.parse(JSON.stringify(message)));            
-            client.sendText(message.from, `Olá, como vai ${message.sender.formattedName}. Sua mensagem é ${message.body}`)
+            console.log(JSON.parse(JSON.stringify(message)));
+            client.sendText(message.from, message.sender.formattedName === 'Vivi Dev' ? 'Olá infiltrada!, pare de tentar me quebrar!' : `Olá, como vai ${message.sender.formattedName}.`)
                 .then((result) => {
-                    console.log('Pong retornado: ', result); 
+                    console.log('Pong retornado: ', result);
                 })
                 .catch((erro) => {
                     console.error('ERRO: ', erro);
                 });
         }))
-        
+
     .catch((error) =>
         console.log(error));
