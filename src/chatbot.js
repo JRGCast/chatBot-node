@@ -9,13 +9,14 @@ wppconnect.create({
 
         client.onMessage((message) => {
             console.log(JSON.parse(JSON.stringify(message)));
-            client.sendText(message.from, message.sender.formattedName === 'Vivi Dev' ? 'Olá infiltrada!, pare de tentar me quebrar!' : `Olá, como vai ${message.sender.formattedName}.`)
-                .then((result) => {
-                    console.log('Pong retornado: ', result);
-                })
-                .catch((erro) => {
-                    console.error('ERRO: ', erro);
-                });
+            // client.
+            // client.sendText(message.from, message.sender.formattedName === 'Vivi Dev' ? 'Olá infiltrada!, pare de tentar me quebrar!' : `Olá, como vai ${message.sender.formattedName}.`)
+            //     .then((result) => {
+            //         console.log('Pong retornado: ', result);
+            //     })
+            //     .catch((erro) => {
+            //         console.error('ERRO: ', erro);
+            //     });
         }))
 
     .catch((error) =>
